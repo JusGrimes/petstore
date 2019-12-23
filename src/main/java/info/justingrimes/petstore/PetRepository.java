@@ -1,10 +1,11 @@
 package info.justingrimes.petstore;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface PetRepository extends PagingAndSortingRepository<Pet,Long> {
+public interface PetRepository extends JpaRepository<Pet,Long> {
     List<Pet> findAllByName(@Param("name") String name);
 }
