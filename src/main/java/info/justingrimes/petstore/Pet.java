@@ -8,16 +8,12 @@ import java.time.LocalDate;
 @Entity
 @Data
 public class Pet {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue
     private Long id;
 
     private String name;
     private PetType petType;
-    private LocalDate vetVisit;
-    private int price;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "owner_id")
+    private double price;
+    @ManyToOne
     private Owner owner;
-
 }
